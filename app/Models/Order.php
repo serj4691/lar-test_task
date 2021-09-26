@@ -17,4 +17,8 @@ class Order extends Model
         'finished_at', 
         'courier_id'
     ];
+
+    public function get_user() {
+        return $this->hasOne('App\Models\Courier', 'id', 'courier_id');
+    }
 }

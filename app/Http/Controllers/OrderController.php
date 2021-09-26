@@ -12,23 +12,19 @@ class OrderController extends Controller
     public function list_orders() {
         $orders = Order::all();
 
-        foreach ($orders as $order) {
-            $order->user = Courier::where(['id' => $order->courier_id])->first();
-        }
-
         return view('orders', compact('orders'));
     }
 
     public function order_info($id) {
         $order = Order::where(['id' => $id])->first();
-        $order->user = Courier::where(['id' => $order->courier_id])->first();
+       
         return view('order_info', compact('order'));
     }
 
     public function order_edit($id) {
         $order = Order::where(['id' => $id])->first();
-        $order->user = Courier::where(['id' => $order->courier_id])->first();
         $users = Courier::all();
+        
         return view('order_edit', compact('order', 'users'));
     }
 

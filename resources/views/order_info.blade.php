@@ -6,6 +6,6 @@
         <div>Описание - {{ $order->description }}</div>
         <div>Точка назначения - {{ $order->appointment }}</div>
         <div>Стоимость - {{ $order->price }}</div>
-        <div>Исполнитель - {{ $order->user->title ? $order->user->title : 'Не назначен'}}</div>    
+        <div>Исполнитель - {{ $order->get_user->title ? $order->get_user->title : 'Не назначен'}}</div>    
     </div>
 </div>

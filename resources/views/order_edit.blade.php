@@ -32,7 +32,7 @@
                 <label class="col-sm-3 col-form-label" for="user">Исполнитель</label>
                 <div class="col-sm-9">
                     <select name="user" id="user" class="form-control">
-                        <option value="{{ $order->user->id }}"> {{$order->user->title ? $order->user->title : 'Не назначен'}}</option>
+                        <option value="{{ $order->get_user->id }}"> {{$order->get_user->title ? $order->get_user->title : 'Не назначен'}}</option>
                         @foreach ($users as $user)
                             <option value="{{ $user->id }}">{{ $user->title }}</option>
                         @endforeach 
